@@ -1,0 +1,34 @@
+body {
+  font-family: "Cairo", sans-serif;
+  background-color: #f3f4f6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+  text-shadow: 0 0 1px #052c65;
+}
+
+.card {
+  width: 6rem;
+  height: 6rem;
+}
+
+.game-control > div {
+  box-shadow: 0 0 5px #052c65;
+}
+
+@media (max-width: 540px) {
+  .grid {
+    margin-top: 4rem;
+  }
+  .card {
+    width: 4rem;
+    height: 4rem;
+  }
+  .game-control > div {
+    margin: 0 2rem;
+  }
+}

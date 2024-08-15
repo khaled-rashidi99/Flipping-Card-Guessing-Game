@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flipping Card Guessing Game</title>
+    <!-- Tailwind CSS -->
+    <script src="tailwind.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&#038;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="../images/icon.png" type="image/icon type" />
+  </head>
+  <body class="flex items-center justify-center h-screen">
+    <div class="text-center">
+      <h1 class="text-3xl font-bold mb-6 text-sky-800">
+        Flipping Cards Guessing Game
+      </h1>
+      <div class="game-control" id="game-control">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <h2 class="text-2xl font-bold mb-6 text-center text-sky-600">
+            Select Difficulty
+          </h2>
+          <div class="space-y-4 mb-6">
+            <div class="flex items-center">
+              <input
+                type="radio"
+                id="easy"
+                name="difficulty"
+                value="90"
+                class="form-radio h-5 w-5"
+                checked
+              />
+              <label for="easy" class="ml-2 text-sky-900">Easy</label>
+            </div>
+            <div class="flex items-center">
+              <input
+                type="radio"
+                id="medium"
+                name="difficulty"
+                value="60"
+                class="form-radio h-5 w-5"
+              />
+              <label for="medium" class="ml-2 text-sky-900">Medium</label>
+            </div>
+            <div class="flex items-center">
+              <input
+                type="radio"
+                id="hard"
+                name="difficulty"
+                value="30"
+                class="form-radio h-5 w-5"
+              />
+              <label for="hard" class="ml-2 text-sky-900">Hard</label>
+            </div>
+          </div>
+          <button id="startBtn" class="px-4 py-2 bg-sky-600 text-white rounded">
+            Start
+          </button>
+        </div>
+      </div>
+      <div id="game-stats" class="hidden">
+        <div class="text-xl font-semibold mb-4 text-sky-700">
+          Score: <span id="score">0</span>
+        </div>
+        <div class="text-xl font-semibold mb-4 text-sky-700">
+          Win Streak: <span id="streak"></span>
+        </div>
+        <div class="text-xl font-semibold mb-4 text-sky-700">
+          Time Left: <span id="timer"></span> seconds
+        </div>
+      </div>
+      <div id="grid" class="grid grid-cols-4 gap-4 justify-items-center"></div>
+    </div>
+
+    <div
+      id="congratsModal"
+      class="hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center"
+    >
+      <div class="bg-white p-6 rounded-lg text-center">
+        <h2 class="text-2xl font-bold mb-4 text-sky-700">Congratulations!</h2>
+        <p class="text-lg text-sky-700">
+          You've completed the game with a score of
+          <span id="finalScore"></span>!
+        </p>
+        <button
+          class="restartGameBtn mt-4 px-4 py-2 bg-sky-600 text-white rounded"
+        >
+          Restart Game
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="gameOverModal"
+      class="hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center"
+    >
+      <div class="bg-white p-6 rounded-lg text-center">
+        <h2 class="text-2xl font-bold mb-4 text-sky-700">Game Over!</h2>
+        <p class="text-lg text-sky-700">
+          You ran out of time!
+          <br />
+          Final score:
+          <span id="finalScoreGameOver"></span>
+        </p>
+        <button
+          class="restartGameBtn mt-4 px-4 py-2 bg-sky-600 text-white rounded"
+        >
+          Restart Game
+        </button>
+      </div>
+    </div>
+    <script src="config.js" type="module"></script>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
